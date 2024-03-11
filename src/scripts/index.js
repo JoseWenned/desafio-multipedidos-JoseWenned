@@ -29,15 +29,17 @@ if(value.trim() !== "") {
         .then(userFound => {
             const resultElement = document.getElementById("result-user");
             resultElement.innerHTML = `
-                <h2>Nome: ${userFound.name}</h2>
-                <p>Nome: ${userFound.age}</p>
-                <p>Nome: ${userFound.email}</p>
+                <h2 class="user-name">Nome: ${userFound.name}</h2>
+                <p class="user-age">Age: ${userFound.age}</p>
+                <p class="user-email">E-mail: ${userFound.email}</p>
             `;
+            console.log(userFound, "User found succesusfully.")
         })
         .catch(erro => {
             const resultElement = document.getElementById("result-user");
             resultElement.innerHTML = `
                 <p>${erro}</p>
             `;
+            console.error(erro)
         });
 }
